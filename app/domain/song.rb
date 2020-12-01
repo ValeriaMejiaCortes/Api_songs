@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Song
   attr_accessor :artist, :title, :api_url
 
