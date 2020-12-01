@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Song
   attr_accessor :artist, :title, :api_url
 
@@ -13,5 +11,11 @@ class Song
     @artist.gsub!(' ', '%20')
     @title.gsub!(' ', '%20')
     response = RestClient.get "#{api_url}/#{@artist}/#{@title}"
+    my_hash = JSON.parse(response)
+    if my_hash['lyrics'].empty?
+      puts 'No lyrics found'
+    else
+      puts response
+    end
   end
 end
