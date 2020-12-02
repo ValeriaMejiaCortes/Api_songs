@@ -1,5 +1,6 @@
 require 'rest-client'
 require 'json'
+
 class Song
   attr_accessor :artist, :title, :api_url
 
